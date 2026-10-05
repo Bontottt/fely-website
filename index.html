@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Fely ♡</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8eee5;
+            font-family: Georgia, serif;
+            color: #5b4a42;
+        }
+
+        .card {
+            width: 85%;
+            max-width: 400px;
+            padding: 40px 25px;
+            text-align: center;
+            background: #fffaf5;
+            border: 2px solid #dbc8b8;
+            border-radius: 20px;
+            box-shadow: 5px 7px 0 #d8c4b5;
+        }
+
+        .heart {
+            font-size: 50px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin: 10px 0;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #cbb8aa;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 20px;
+            background: #d99a9a;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: #b65f6b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="heart">💌</div>
+
+        <h1>Hi, Fely ♡</h1>
+
+        <p>
+            Ada sesuatu kecil yang<br>
+            mau aku kasih ke kamu...
+        </p>
+
+        <p>
+            Tapi kamu harus tahu<br>
+            passwordnya dulu 🤫
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="password..."
+        >
+
+        <br>
+
+        <button onclick="checkPassword()">
+            Open ♡
+        </button>
+
+        <div id="message"></div>
+
+    </div>
+
+    <script>
+        function checkPassword() {
+
+            const password =
+                document.getElementById("password").value;
+
+            if (password === "fely") {
+
+                document.getElementById("message").innerHTML =
+                    "♡ Password benar! Sebentar...";
+
+            } else {
+
+                document.getElementById("message").innerHTML =
+                    "Hehe, passwordnya salah 🤭";
+
+            }
+        }
+    </script>
+
+</body>
+        </html>
