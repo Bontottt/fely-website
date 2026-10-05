@@ -3,1035 +3,1227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Fely ♡</title>
+
+<title>For Fely ✨</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Nunito:wght@400;500;600&display=swap');
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.7), transparent 25%),
-        radial-gradient(circle at 80% 80%, rgba(255,220,220,.35), transparent 30%),
-        #f5eadb;
-    color: #4d4038;
-    font-family: 'Nunito', sans-serif;
-    overflow-x: hidden;
+  min-height: 100vh;
+  background: #efe5d2;
+  color: #403a35;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-/* doodles */
+/* TEXTURE */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .16;
+  background-image: radial-gradient(#8d806f .7px, transparent .7px);
+  background-size: 8px 8px;
+}
+
 .doodle {
-    position: fixed;
-    font-family: 'Caveat', cursive;
-    font-size: 32px;
-    opacity: .55;
-    pointer-events: none;
+  position: fixed;
+  font-size: 28px;
+  opacity: .45;
+  z-index: 0;
 }
 
-.d1 { top: 20px; left: 20px; transform: rotate(-15deg); }
-.d2 { top: 45px; right: 25px; transform: rotate(12deg); }
-.d3 { bottom: 25px; left: 25px; transform: rotate(10deg); }
-.d4 { bottom: 30px; right: 25px; transform: rotate(-12deg); }
-
-/* container */
-.container {
-    width: 100%;
-    max-width: 700px;
-    margin: auto;
-    padding: 35px 18px 50px;
+.d1 {
+  top: 5%;
+  left: 6%;
+  transform: rotate(-12deg);
 }
 
-/* paper */
+.d2 {
+  top: 18%;
+  right: 7%;
+  transform: rotate(14deg);
+}
+
+.d3 {
+  bottom: 12%;
+  left: 7%;
+  transform: rotate(8deg);
+}
+
+.d4 {
+  bottom: 5%;
+  right: 8%;
+  transform: rotate(-10deg);
+}
+
+/* SCREEN */
+.screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+/* PAPER */
 .paper {
-    position: relative;
-    background:
-        linear-gradient(rgba(255,255,255,.88), rgba(255,255,255,.88)),
-        #fffdf8;
-    border-radius: 5px;
-    padding: 35px 28px 30px;
-    box-shadow:
-        0 10px 30px rgba(85,65,50,.12),
-        0 2px 5px rgba(85,65,50,.08);
-    transform: rotate(-0.4deg);
+  width: min(720px, 94vw);
+  background: #fffdf7;
+  border: 1px solid #ddd1bb;
+  box-shadow: 0 15px 35px rgba(70,55,40,.14);
+  padding: 30px 24px;
+  position: relative;
 }
 
-/* tape */
-.tape {
-    position: absolute;
-    width: 100px;
-    height: 27px;
-    background: rgba(235,202,170,.65);
-    top: -13px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-2deg);
+.paper::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 120px;
+  height: 25px;
+  background: rgba(221,197,156,.72);
 }
 
-/* password */
-#passwordPage {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
+.center {
+  text-align: center;
 }
 
-.password-card {
-    width: 100%;
-    max-width: 430px;
-    text-align: center;
+.small {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #8c7c69;
 }
 
-.small-note {
-    font-family: 'Caveat', cursive;
-    font-size: 22px;
-    color: #8b7567;
-}
-
-.heart {
-    font-size: 58px;
-    margin: 15px 0;
-    animation: float 2s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%,100% { transform: translateY(0) rotate(-4deg); }
-    50% { transform: translateY(-7px) rotate(4deg); }
+h1,
+h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
 }
 
 h1 {
-    font-family: 'Caveat', cursive;
-    font-size: 48px;
-    font-weight: 500;
-    margin: 8px 0;
-    color: #5b4940;
+  font-size: 38px;
+  margin: 12px 0;
 }
 
-.subtitle {
-    line-height: 1.7;
-    color: #75665d;
-    font-size: 14px;
+h2 {
+  font-size: 29px;
+  margin: 0 0 20px;
 }
 
-input {
-    width: 100%;
-    padding: 14px 16px;
-    margin-top: 18px;
-    border: 1px solid #dbc9b8;
-    border-radius: 8px;
-    background: #fffdf9;
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    outline: none;
-    text-align: center;
+p {
+  font-size: 16px;
+  line-height: 1.85;
+  margin: 0 0 17px;
 }
 
-input:focus {
-    border-color: #b99c88;
-}
-
+/* BUTTON */
 button {
-    border: none;
-    border-radius: 8px;
-    padding: 13px 20px;
-    margin-top: 12px;
-    background: #8d7464;
-    color: white;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    transition: .2s;
+  border: 0;
+  background: #5c5147;
+  color: #fffdf7;
+  border-radius: 999px;
+  padding: 13px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(60,45,30,.14);
 }
 
 button:hover {
-    transform: translateY(-2px);
-    opacity: .9;
+  transform: translateY(-1px);
 }
 
-.error {
-    min-height: 24px;
-    margin-top: 10px;
-    color: #a46b6b;
-    font-size: 13px;
+/* PASSWORD */
+#passwordScreen {
+  display: flex;
 }
 
-/* website */
-#website {
-    display: none;
+input {
+  width: min(310px, 90%);
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #d8cbb8;
+  background: #fffdf8;
+  text-align: center;
+  outline: none;
+  font-size: 16px;
 }
 
+#error {
+  height: 22px;
+  color: #9c5d55;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* WEBSITE */
+#site {
+  display: none;
+}
+
+/* PAGES */
 .page {
-    display: none;
+  display: none;
+  animation: fade .45s ease;
 }
 
 .page.active {
-    display: block;
-    animation: fade .4s ease;
+  display: block;
 }
 
 @keyframes fade {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.page-title {
-    font-family: 'Caveat', cursive;
-    font-size: 39px;
-    font-weight: 500;
-    margin: 5px 0 22px;
-    color: #5b4940;
+/* NAVIGATION */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 25px;
 }
 
-.content {
-    font-size: 15px;
-    line-height: 1.9;
-    color: #5d5049;
+.nav button {
+  flex: 1;
 }
 
-.content p {
-    margin: 0 0 18px;
+.nav .back {
+  background: #d9cbb8;
+  color: #4c433b;
 }
 
-.handwritten {
-    font-family: 'Caveat', cursive;
-    font-size: 23px;
-    line-height: 1.6;
+.progress {
+  text-align: center;
+  font-size: 12px;
+  color: #958574;
+  margin-top: 15px;
+}
+
+/* PHOTOS */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.polaroid {
+  background: #fff;
+  padding: 9px 9px 15px;
+  box-shadow: 0 7px 18px rgba(60,45,30,.14);
+  transform: rotate(-1.5deg);
+}
+
+.polaroid:nth-child(2) {
+  transform: rotate(1.7deg);
+}
+
+.polaroid:nth-child(3) {
+  transform: rotate(1deg);
+}
+
+.polaroid:nth-child(4) {
+  transform: rotate(-2deg);
+}
+
+.polaroid:nth-child(5) {
+  transform: rotate(.8deg);
+  grid-column: 1 / -1;
+  max-width: 360px;
+  justify-self: center;
+}
+
+.polaroid img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.caption {
+  text-align: center;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 14px;
+  padding: 10px 4px 0;
+  line-height: 1.35;
+}
+
+/* MUSIC */
+.music {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 20;
+  background: #fffdf7;
+  border: 1px solid #d9ccb9;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(60,45,30,.16);
+  padding: 9px 13px;
+  font-size: 12px;
+  color: #554b43;
+}
+
+.music button {
+  padding: 7px 11px;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+/* HIDDEN MESSAGE */
+.hidden-box {
+  display: none;
+  margin-top: 25px;
+  padding: 25px 20px;
+  background: #f8f0e2;
+  border: 1px dashed #bbaa91;
+  animation: fade .5s ease;
+}
+
+.hidden-box.show {
+  display: block;
 }
 
 .quote {
-    font-family: 'Caveat', cursive;
-    font-size: 24px;
-    text-align: center;
-    margin: 25px 0;
-    padding: 15px;
-    color: #80675a;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  line-height: 1.7;
+  text-align: center;
 }
 
-.divider {
-    text-align: center;
-    margin: 25px 0;
-    color: #b59c8b;
-    letter-spacing: 7px;
+.footer {
+  text-align: center;
+  color: #998976;
+  font-size: 12px;
+  margin-top: 25px;
 }
 
-/* navigation */
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 30px;
-    gap: 10px;
-}
+/* MOBILE */
+@media(max-width:600px) {
 
-.navigation button {
-    min-width: 100px;
-}
+  .paper {
+    padding: 25px 18px;
+  }
 
-.page-number {
-    font-family: 'Caveat', cursive;
-    font-size: 20px;
-    color: #9a8373;
-}
+  h1 {
+    font-size: 32px;
+  }
 
-.final-heart {
-    text-align: center;
-    font-size: 35px;
-    margin-top: 25px;
-}
+  h2 {
+    font-size: 25px;
+  }
 
-/* mobile */
-@media (max-width: 600px) {
-    .container {
-        padding: 25px 13px 40px;
-    }
+  p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
 
-    .paper {
-        padding: 30px 21px 25px;
-    }
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 
-    h1 {
-        font-size: 43px;
-    }
+  .polaroid:nth-child(n) {
+    transform: rotate(0);
+  }
 
-    .page-title {
-        font-size: 35px;
-    }
-
-    .content {
-        font-size: 14px;
-        line-height: 1.85;
-    }
+  .polaroid:nth-child(5) {
+    grid-column: auto;
+    max-width: none;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="doodle d1">♡</div>
-<div class="doodle d2">✦</div>
-<div class="doodle d3">☁</div>
-<div class="doodle d4">♡</div>
+<div class="doodle d1">✦</div>
+<div class="doodle d2">✧</div>
+<div class="doodle d3">✦</div>
+<div class="doodle d4">✧</div>
 
 
-<!-- PASSWORD -->
-<section id="passwordPage">
+<!-- =========================
+     PASSWORD
+========================= -->
 
-    <div class="paper password-card">
-        <div class="tape"></div>
+<section id="passwordScreen" class="screen">
 
-        <div class="small-note">a little something for you</div>
+  <div class="paper center">
 
-        <div class="heart">💌</div>
-
-        <h1>Hi, Fely ♡</h1>
-
-        <p class="subtitle">
-            I made this little corner especially for you.
-            But before you come in...
-            there's one tiny thing you need to know 🤫
-        </p>
-
-        <div class="small-note" style="margin-top:25px;">
-            ✎ what's the password?
-        </div>
-
-        <input
-            type="password"
-            id="passwordInput"
-            placeholder="type it here..."
-            autocomplete="off"
-        >
-
-        <button onclick="checkPassword()">
-            open my little secret ♡
-        </button>
-
-        <div class="error" id="errorMessage"></div>
-
-        <div class="small-note" style="margin-top:20px;">
-            made with a little bit of courage ♡
-        </div>
+    <div class="small">
+      a little something for you
     </div>
+
+    <h1>
+      Hi, Fely ✨
+    </h1>
+
+    <p>
+      Wa bikin tempat kecil ini buat ngomongin beberapa hal
+      yang susah wa sampaikan secara langsung.
+    </p>
+
+    <p class="small">
+      ✎ what's the password?
+    </p>
+
+    <input
+      id="password"
+      type="password"
+      placeholder="enter password"
+    >
+
+    <br><br>
+
+    <button onclick="checkPassword()">
+      open my little secret ✨
+    </button>
+
+    <div id="error"></div>
+
+    <div class="footer">
+      made with a little bit of courage ✨
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- WEBSITE -->
-<section id="website">
+<!-- =========================
+     MAIN WEBSITE
+========================= -->
 
-<div class="container">
+<main id="site">
+
+<div class="screen">
 
 <div class="paper">
 
-<div class="tape"></div>
-
 
 <!-- PAGE 1 -->
-<div class="page active">
 
-    <div class="page-title">Halo Fely.</div>
+<section class="page active">
 
-    <div class="content">
-
-        <p>
-            Wa sebenarnya gak tau harus mulai dari mana,
-            jadi wa bikin tempat kecil ini buat ngomongin beberapa
-            hal yang buat wa gak nyaman dan susah untuk kasi tau
-            secara langsung.
-        </p>
-
-        <p>
-            Karena menurut wa, udah awkward aja dan ya...
-            sama-sama udah capek.
-        </p>
-
-        <p>
-            Wa buat web ini sebenarnya udah lama,
-            jauh sebelum de kirim link de itu.
-            Cuman web ini wa cicil-cicil buat karena ya,
-            coding juga wkwk.
-        </p>
-
-        <p>
-            Dan wa juga gak tau kapan mau send,
-            karena ya... udah awkward aja.
-        </p>
-
-        <p>
-            Tapi akhirnya wa kirim juga.
-        </p>
-
-        <div class="quote">
-            Jadi, sebelum lanjut, wa cuma mau bilang:
-            baca pelan-pelan aja ya.
-            Gak perlu langsung jawab apa-apa.
-        </div>
-
-    </div>
-
+<div class="small">
+01 · halo
 </div>
+
+<h2>
+Halo Fely.
+</h2>
+
+<p>
+Wa sebenarnya gak tau harus mulai dari mana, jadi wa bikin tempat kecil ini buat ngomongin beberapa hal yang buat wa gak nyaman dan susah untuk kasi tau secara langsung. Karena menurut wa, udah awkward aja dan ya... sama-sama udah capek.
+</p>
+
+<p>
+Wa buat web ini sebenarnya udah lama, jauh sebelum de kirim link de itu. Cuman web ini wa cicil-cicil buat karena ya, coding juga wkwk. Dan wa juga gak tau kapan mau send, karena ya... udah awkward aja.
+</p>
+
+<p>
+Tapi akhirnya wa kirim juga.
+</p>
+
+<p>
+Jadi, sebelum lanjut, wa cuma mau bilang: baca pelan-pelan aja ya. Gak perlu langsung jawab apa-apa.
+</p>
+
+</section>
 
 
 <!-- PAGE 2 -->
-<div class="page">
 
-    <div class="page-title">Sebenarnya...</div>
+<section class="page">
 
-    <div class="content">
-
-        <p>
-            Sebenarnya, wa masih ingat de pernah bilang kalau de gak mau
-            wa berubah. Tapi sekarang, wa malah ngerasa de yang berubah.
-            Sampai di titik wa bisa bilang,
-            “I feel like I don’t even know you anymore.”
-        </p>
-
-        <p>
-            Wa gak tau apakah masalahnya ada di wa atau di de.
-            Tapi yang wa rasain sekarang, wa sering ngerasa gak dianggap.
-            Dan karena itu, kadang wa jadi capek buat ngomong lagi.
-            Takut kalau dibahas malah jadi masalah, jadi wa pendam.
-            Tapi makin lama wa pendam, wa malah makin capek sendiri.
-        </p>
-
-        <p>
-            Wa juga ngerasa de kayak gak mau menyelesaikan masalah.
-            Bukan karena wa gak ngerti kalau de mungkin bingung harus
-            ngomong apa, atau de mungkin capek juga, apalagi sejak magang.
-            Wa ngerti itu.
-        </p>
-
-        <p>
-            Tapi wa juga kerja dan wa juga capek.
-            Bedanya, wa tetap mau nyelesaikan karena buat wa,
-            pertemanan kita penting.
-        </p>
-
-        <p>
-            Yang bikin wa capek adalah rasanya selalu wa yang harus
-            ngomong duluan. Selalu wa yang mulai ngajak ngobrol,
-            mulai menyelesaikan, mulai memperbaiki.
-        </p>
-
-        <p>
-            Lama-lama wa jadi ngerasa kayak wa sendiri yang berusaha
-            mempertahankan pertemanan ini.
-        </p>
-
-        <p>
-            Fel, wa juga gak terlalu percaya kalau
-            “time will heal everything”.
-        </p>
-
-        <p>
-            Mungkin kalau cuma sejam atau dua jam, iya,
-            kita butuh waktu buat tenang.
-            Tapi kalau sampai berhari-hari, menurut wa itu bukan lagi
-            soal waktu.
-        </p>
-
-        <p>
-            Karena kalau masalahnya cuma didiamkan,
-            menurut wa bukannya hilang, tapi malah makin besar.
-        </p>
-
-        <p>
-            Ibarat api kecil yang dibiarkan.
-            Mungkin awalnya kelihatan kecil dan gak terlalu bahaya.
-            Tapi kalau terus didiamkan, bukannya padam,
-            malah bisa jadi makin besar.
-        </p>
-
-        <p>
-            Wa mau menyelesaikan masalah.
-            Wa mau ngomong baik-baik.
-            Tapi wa juga capek kalau semuanya harus wa mulai dulu.
-        </p>
-
-        <p>
-            Dan mungkin yang paling bikin wa ngerasa de berubah
-            itu bukan cuma satu hal.
-            Tapi semuanya.
-        </p>
-
-        <p>
-            Wa orangnya memang suka notice hal-hal kecil.
-            Jadi setiap perubahan kecil yang de lakukan, wa sadar.
-        </p>
-
-        <p>
-            Dulu, de sering temanin wa driving malam.
-            Kadang kita bahkan gak ada yang mau dibicarain,
-            tapi ujung-ujungnya tetap ada aja.
-            Entah tanya-tanya hal random, teka-teki,
-            atau cuma ngobrol gak jelas.
-        </p>
-
-        <p>
-            Dulu kita juga sering nugas bareng.
-            Saling gantian ngajak.
-            Kadang wa yang ngajak, kadang de yang ngajak.
-        </p>
-
-        <p>
-            Main juga begitu.
-            Kalau malam, kita selalu berusaha bagi waktu dan gantian ngajak.
-            Dari hal-hal kecil itu, wa jadi ngerasa kalau,
-            “Oh, orang ini penting buat wa.”
-        </p>
-
-        <p>
-            Tapi sekarang?
-        </p>
-
-        <p>
-            Entah lah.
-        </p>
-
-        <p>
-            Wa ngerti de sekarang punya cowo.
-            Wa ngerti kalau pacaran pasti bikin banyak hal berubah
-            dan mungkin buat de itu semua normal.
-        </p>
-
-        <p>
-            Tapi menurut wa, punya pasangan bukan berarti harus
-            kehilangan teman.
-        </p>
-
-        <p>
-            Mungkin buat de itu hal yang biasa karena de sedang menjalani
-            hubungan de. Tapi buat orang yang ada di sisi satunya dan
-            merasa perlahan-lahan ditinggalkan, itu tetap sakit.
-        </p>
-
-        <p>
-            Dan selama ini wa pendam.
-        </p>
-
-        <p>
-            Wa coba ngerti.
-        </p>
-
-        <p>
-            Wa coba maklumin.
-        </p>
-
-        <p>
-            Wa coba bilang ke diri sendiri kalau mungkin memang lagi sibuk,
-            mungkin lagi capek, mungkin memang karena pacaran.
-        </p>
-
-        <p>
-            Tapi lama-lama wa juga capek terus-terusan mengerti sendirian.
-        </p>
-
-        <p>
-            Contohnya aja A Way Out.
-            Game itu udah lama banget kita omongin dan kita udah sepakat
-            mau main bareng.
-            Wa juga berkali-kali ngajak, walaupun de sering gak bisa.
-        </p>
-
-        <p>
-            Sampai akhirnya kita pernah ngomong kalau nanti kita mainnya
-            pas girls time, dan kalau si Mel gak bisa,
-            baru kita main berdua.
-        </p>
-
-        <p>
-            Tapi pada akhirnya gak pernah benar-benar kejadian.
-        </p>
-
-        <p>
-            Dan wa capek jadi orang yang selalu ngajak.
-        </p>
-
-        <p>
-            Bukan karena wa marah kalau de gak bisa.
-            Wa ngerti kalau de punya kesibukan.
-        </p>
-
-        <p>
-            Tapi kalau wa terus yang mengingat, terus yang ngajak,
-            terus yang berusaha mencari waktu, sementara dari sisi de
-            kayak gak ada usaha yang sama, lama-lama wa jadi mikir sendiri.
-        </p>
-
-        <div class="quote">
-            “Berarti ini gak sepenting itu buat de, ya?”
-        </div>
-
-        <p>
-            Dan kalau memang de gak mau main, ya wa juga gak mau maksa.
-        </p>
-
-        <p>
-            Jadi akhirnya wa nyerah aja.
-        </p>
-
-        <p>
-            Bukan karena wa udah gak peduli.
-            Justru karena wa terlalu peduli sampai akhirnya wa capek sendiri.
-        </p>
-
-    </div>
-
+<div class="small">
+02 · sebenarnya...
 </div>
+
+<h2>
+Sebenarnya...
+</h2>
+
+<p>
+Sebenarnya, wa masih ingat de pernah bilang kalau de gak mau wa berubah. Tapi sekarang, wa malah ngerasa de yang berubah. Sampai di titik wa bisa bilang, “I feel like I don’t even know you anymore.”
+</p>
+
+<p>
+Wa gak tau apakah masalahnya ada di wa atau di de. Tapi yang wa rasain sekarang, wa sering ngerasa gak dianggap. Dan karena itu, kadang wa jadi capek buat ngomong lagi. Takut kalau dibahas malah jadi masalah, jadi wa pendam. Tapi makin lama wa pendam, wa malah makin capek sendiri.
+</p>
+
+<p>
+Wa juga ngerasa de kayak gak mau menyelesaikan masalah. Bukan karena wa gak ngerti kalau de mungkin bingung harus ngomong apa, atau de mungkin capek juga, apalagi sejak magang. Wa ngerti itu. Tapi wa juga kerja dan wa juga capek. Bedanya, wa tetap mau nyelesaikan karena buat wa, pertemanan kita penting.
+</p>
+
+<p>
+Yang bikin wa capek adalah rasanya selalu wa yang harus ngomong duluan. Selalu wa yang mulai ngajak ngobrol, mulai menyelesaikan, mulai memperbaiki. Lama-lama wa jadi ngerasa kayak wa sendiri yang berusaha mempertahankan pertemanan ini.
+</p>
+
+<p>
+Fel, wa juga gak terlalu percaya kalau “time will heal everything”. Mungkin kalau cuma sejam atau dua jam, iya, kita butuh waktu buat tenang. Tapi kalau sampai berhari-hari, menurut wa itu bukan lagi soal waktu.
+</p>
+
+<p>
+Karena kalau masalahnya cuma didiamkan, menurut wa bukannya hilang, tapi malah makin besar.
+</p>
+
+<p>
+Ibarat api kecil yang dibiarkan. Mungkin awalnya kelihatan kecil dan gak terlalu bahaya. Tapi kalau terus didiamkan, bukannya padam, malah bisa jadi makin besar.
+</p>
+
+<p>
+Wa mau menyelesaikan masalah. Wa mau ngomong baik-baik. Tapi wa juga capek kalau semuanya harus wa mulai dulu.
+</p>
+
+<p>
+Dan mungkin yang paling bikin wa ngerasa de berubah itu bukan cuma satu hal. Tapi semuanya.
+</p>
+
+<p>
+Wa orangnya memang suka notice hal-hal kecil. Jadi setiap perubahan kecil yang de lakukan, wa sadar.
+</p>
+
+<p>
+Dulu, de sering temanin wa driving malam. Kadang kita bahkan gak ada yang mau dibicarain, tapi ujung-ujungnya tetap ada aja. Entah tanya-tanya hal random, teka-teki, atau cuma ngobrol gak jelas.
+</p>
+
+<p>
+Dulu kita juga sering nugas bareng. Saling gantian ngajak. Kadang wa yang ngajak, kadang de yang ngajak.
+</p>
+
+<p>
+Main juga begitu. Kalau malam, kita selalu berusaha bagi waktu dan gantian ngajak. Dari hal-hal kecil itu, wa jadi ngerasa kalau, “Oh, orang ini penting buat wa.”
+</p>
+
+<p>
+Tapi sekarang?
+</p>
+
+<p>
+Entah lah.
+</p>
+
+<p>
+Wa ngerti de sekarang punya cowo. Wa ngerti kalau pacaran pasti bikin banyak hal berubah dan mungkin buat de itu semua normal.
+</p>
+
+<p>
+Tapi menurut wa, punya pasangan bukan berarti harus kehilangan teman.
+</p>
+
+<p>
+Mungkin buat de itu hal yang biasa karena de sedang menjalani hubungan de. Tapi buat orang yang ada di sisi satunya dan merasa perlahan-lahan ditinggalkan, itu tetap sakit.
+</p>
+
+<p>
+Dan selama ini wa pendam.
+</p>
+
+<p>
+Wa coba ngerti.
+</p>
+
+<p>
+Wa coba maklumin.
+</p>
+
+<p>
+Wa coba bilang ke diri sendiri kalau mungkin memang lagi sibuk, mungkin lagi capek, mungkin memang karena pacaran.
+</p>
+
+<p>
+Tapi lama-lama wa juga capek terus-terusan mengerti sendirian.
+</p>
+
+<p>
+Contohnya aja A Way Out. Game itu udah lama banget kita omongin dan kita udah sepakat mau main bareng. Wa juga berkali-kali ngajak, walaupun de sering gak bisa.
+</p>
+
+<p>
+Sampai akhirnya kita pernah ngomong kalau nanti kita mainnya pas girls time, dan kalau si Mel gak bisa, baru kita main berdua.
+</p>
+
+<p>
+Tapi pada akhirnya gak pernah benar-benar kejadian.
+</p>
+
+<p>
+Dan wa capek jadi orang yang selalu ngajak.
+</p>
+
+<p>
+Bukan karena wa marah kalau de gak bisa. Wa ngerti kalau de punya kesibukan.
+</p>
+
+<p>
+Tapi kalau wa terus yang mengingat, terus yang ngajak, terus yang berusaha mencari waktu, sementara dari sisi de kayak gak ada usaha yang sama, lama-lama wa jadi mikir sendiri.
+</p>
+
+<p>
+“Berarti ini gak sepenting itu buat de, ya?”
+</p>
+
+<p>
+Dan kalau memang de gak mau main, ya wa juga gak mau maksa.
+</p>
+
+<p>
+Jadi akhirnya wa nyerah aja.
+</p>
+
+<p>
+Bukan karena wa udah gak peduli.
+</p>
+
+<p>
+Justru karena wa terlalu peduli sampai akhirnya wa capek sendiri.
+</p>
+
+</section>
 
 
 <!-- PAGE 3 -->
-<div class="page">
 
-    <div class="page-title">Wa Sebenarnya Gak Nyalahin De</div>
+<section class="page">
 
-    <div class="content">
-
-        <p>
-            Wa sebenarnya gak nyalahin de karena de sekarang punya cowo.
-        </p>
-
-        <p>
-            Wa ngerti kok, kalau sekarang de punya seseorang yang mungkin
-            memang jadi prioritas de. Wa juga ngerti kalau pacaran pasti
-            bikin waktu, perhatian, dan banyak hal jadi berubah.
-            Dan wa gak pernah berharap de harus ninggalin hubungan de
-            cuma demi pertemanan kita.
-        </p>
-
-        <p>
-            Wa juga gak mau jadi teman yang seolah-olah nuntut de
-            harus selalu ada buat wa.
-            Wa ngerti de punya kehidupan sendiri,
-            punya kesibukan sendiri,
-            dan wa juga punya kehidupan wa sendiri.
-        </p>
-
-        <p>
-            Yang wa permasalahin sebenarnya bukan soal de punya cowo.
-        </p>
-
-        <p>
-            Tapi soal setelah de punya cowo, wa merasa posisi wa sebagai
-            teman perlahan-lahan berubah.
-            Dari yang dulu rasanya sama-sama berusaha buat tetap punya waktu,
-            sekarang wa malah sering ngerasa kayak wa yang harus mencari
-            tempat sendiri di kehidupan de.
-        </p>
-
-        <p>
-            Dan mungkin buat de, perubahan itu biasa aja.
-            Mungkin de bahkan gak sadar kalau hal-hal kecil yang de lakukan
-            sebenarnya kerasa banget buat wa.
-        </p>
-
-        <p>
-            Wa gak minta semuanya harus kembali persis seperti dulu.
-            Wa tahu kita juga sama-sama berubah dan mungkin memang gak mungkin
-            terus seperti dulu.
-        </p>
-
-        <p>
-            Wa cuma gak mau pertemanan yang selama ini penting buat wa
-            akhirnya hilang begitu aja karena kita sama-sama diam
-            dan gak pernah ngomongin apa yang sebenarnya kita rasain.
-        </p>
-
-    </div>
-
+<div class="small">
+03 · wa sebenarnya gak nyalahin de
 </div>
+
+<h2>
+Wa Sebenarnya Gak Nyalahin De
+</h2>
+
+<p>
+Wa sebenarnya gak nyalahin de karena de sekarang punya cowo.
+</p>
+
+<p>
+Wa ngerti kok, kalau sekarang de punya seseorang yang mungkin memang jadi prioritas de. Wa juga ngerti kalau pacaran pasti bikin waktu, perhatian, dan banyak hal jadi berubah. Dan wa gak pernah berharap de harus ninggalin hubungan de cuma demi pertemanan kita.
+</p>
+
+<p>
+Wa juga gak mau jadi teman yang seolah-olah nuntut de harus selalu ada buat wa. Wa ngerti de punya kehidupan sendiri, punya kesibukan sendiri, dan wa juga punya kehidupan wa sendiri.
+</p>
+
+<p>
+Yang wa permasalahin sebenarnya bukan soal de punya cowo.
+</p>
+
+<p>
+Tapi soal setelah de punya cowo, wa merasa posisi wa sebagai teman perlahan-lahan berubah. Dari yang dulu rasanya sama-sama berusaha buat tetap punya waktu, sekarang wa malah sering ngerasa kayak wa yang harus mencari tempat sendiri di kehidupan de.
+</p>
+
+<p>
+Dan mungkin buat de, perubahan itu biasa aja. Mungkin de bahkan gak sadar kalau hal-hal kecil yang de lakukan sebenarnya kerasa banget buat wa.
+</p>
+
+<p>
+Wa gak minta semuanya harus kembali persis seperti dulu. Wa tahu kita juga sama-sama berubah dan mungkin memang gak mungkin terus seperti dulu.
+</p>
+
+<p>
+Wa cuma gak mau pertemanan yang selama ini penting buat wa akhirnya hilang begitu aja karena kita sama-sama diam dan gak pernah ngomongin apa yang sebenarnya kita rasain.
+</p>
+
+</section>
 
 
 <!-- PAGE 4 -->
-<div class="page">
 
-    <div class="page-title">Wa Juga Minta Maaf</div>
+<section class="page">
 
-    <div class="content">
-
-        <p>
-            Dan di antara semua yang wa sampaikan di sini,
-            wa juga mau minta maaf.
-        </p>
-
-        <p>
-            Wa minta maaf kalau selama ini cara wa menyampaikan perasaan wa
-            salah. Wa sadar wa sering ngambek, terus diem, kadang jadi dry text,
-            dan mungkin dari sisi de itu malah bikin de bingung harus ngapain
-            atau harus ngomong apa ke wa.
-        </p>
-
-        <p>
-            Kadang wa memang berharap de sadar sendiri kalau wa lagi gak baik-baik
-            aja, padahal wa gak pernah benar-benar menjelaskan apa yang wa rasain.
-            Jadi kalau akhirnya de capek atau bingung menghadapi sikap wa,
-            wa ngerti.
-        </p>
-
-        <p>
-            Wa juga minta maaf kalau selama ini wa terlalu banyak berharap,
-            terlalu banyak notice hal-hal kecil, atau terlalu berharap de bisa
-            ngerti apa yang wa rasain tanpa wa jelasin dengan baik.
-        </p>
-
-        <p>
-            Mungkin ada saat-saat di mana wa sebenarnya pengen diajak ngomong,
-            tapi cara wa malah menjauh.
-            Pengen diperhatiin, tapi malah diem.
-            Pengen masalahnya diselesaikan, tapi wa sendiri malah ngambek
-            dan bikin suasananya makin awkward.
-        </p>
-
-        <p>
-            Wa sadar itu juga salah wa.
-        </p>
-
-        <p>
-            Wa gak selalu bisa menyampaikan sesuatu dengan cara yang baik.
-            Kadang wa lebih memilih diam karena takut kalau ngomong malah jadi
-            masalah, tapi akhirnya diamnya wa malah bikin masalah itu semakin panjang.
-        </p>
-
-        <p>
-            Jadi kalau selama ini ada sikap wa yang bikin de capek,
-            merasa tertekan, bingung, atau merasa pertemanan ini malah jadi beban,
-            wa benar-benar minta maaf.
-        </p>
-
-        <p>
-            Wa sadar wa juga gak selalu benar.
-            Wa juga bisa salah, bisa egois, bisa terlalu memikirkan sesuatu
-            dari sudut pandang wa sendiri.
-        </p>
-
-        <p>
-            Wa gak bikin ini buat bilang kalau wa yang paling benar dan de yang salah.
-        </p>
-
-        <p>
-            Wa cuma akhirnya memberanikan diri buat jujur tentang apa
-            yang selama ini wa rasain.
-        </p>
-
-        <p>
-            Dan kalau ternyata selama ini ada hal dari wa yang bikin de
-            memilih menjauh, wa juga pengen tahu.
-        </p>
-
-        <p>
-            Karena kalau kita memang mau memperbaiki sesuatu,
-            wa rasa kita sama-sama harus berani buat ngomong apa yang
-            kita bener bener rasain.
-        </p>
-
-    </div>
-
+<div class="small">
+04 · wa juga minta maaf
 </div>
+
+<h2>
+Wa Juga Minta Maaf
+</h2>
+
+<p>
+Dan di antara semua yang wa sampaikan di sini, wa juga mau minta maaf.
+</p>
+
+<p>
+Wa minta maaf kalau selama ini cara wa menyampaikan perasaan wa salah. Wa sadar wa sering ngambek, terus diem, kadang jadi dry text, dan mungkin dari sisi de itu malah bikin de bingung harus ngapain atau harus ngomong apa ke wa.
+</p>
+
+<p>
+Kadang wa memang berharap de sadar sendiri kalau wa lagi gak baik-baik aja, padahal wa gak pernah benar-benar menjelaskan apa yang wa rasain. Jadi kalau akhirnya de capek atau bingung menghadapi sikap wa, wa ngerti.
+</p>
+
+<p>
+Wa juga minta maaf kalau selama ini wa terlalu banyak berharap, terlalu banyak notice hal-hal kecil, atau terlalu berharap de bisa ngerti apa yang wa rasain tanpa wa jelasin dengan baik.
+</p>
+
+<p>
+Mungkin ada saat-saat di mana wa sebenarnya pengen diajak ngomong, tapi cara wa malah menjauh. Pengen diperhatiin, tapi malah diem. Pengen masalahnya diselesaikan, tapi wa sendiri malah ngambek dan bikin suasananya makin awkward.
+</p>
+
+<p>
+Wa sadar itu juga salah wa.
+</p>
+
+<p>
+Wa gak selalu bisa menyampaikan sesuatu dengan cara yang baik. Kadang wa lebih memilih diam karena takut kalau ngomong malah jadi masalah, tapi akhirnya diamnya wa malah bikin masalah itu semakin panjang.
+</p>
+
+<p>
+Jadi kalau selama ini ada sikap wa yang bikin de capek, merasa tertekan, bingung, atau merasa pertemanan ini malah jadi beban, wa benar-benar minta maaf.
+</p>
+
+<p>
+Wa sadar wa juga gak selalu benar. Wa juga bisa salah, bisa egois, bisa terlalu memikirkan sesuatu dari sudut pandang wa sendiri.
+</p>
+
+<p>
+Wa gak bikin ini buat bilang kalau wa yang paling benar dan de yang salah.
+</p>
+
+<p>
+Wa cuma akhirnya memberanikan diri buat jujur tentang apa yang selama ini wa rasain.
+</p>
+
+<p>
+Dan kalau ternyata selama ini ada hal dari wa yang bikin de memilih menjauh, wa juga pengen tahu.
+</p>
+
+<p>
+Karena kalau kita memang mau memperbaiki sesuatu, wa rasa kita sama-sama harus berani buat ngomong apa yang kita bener bener rasain.
+</p>
+
+</section>
 
 
 <!-- PAGE 5 -->
-<div class="page">
 
-    <div class="page-title">Terima Kasih, Fel</div>
+<section class="page">
 
-    <div class="content">
-
-        <p>
-            Oh iya, wa juga mau bilang makasih.
-        </p>
-
-        <p>
-            Makasih buat semua hal yang udah de lakuin dari dulu sampai sekarang.
-            Mungkin ada banyak hal yang menurut de biasa aja atau bahkan udah de lupa,
-            tapi wa masih ingat.
-        </p>
-
-        <p>
-            Makasih buat waktu-waktu yang pernah kita habiskan bareng.
-            Buat malam-malam waktu de temanin wa driving,
-            walaupun kadang kita gak ada yang mau dibahas tapi ujung-ujungnya
-            tetap ada aja yang diomongin.
-            Entah tanya-tanya random, teka-teki, atau ngobrol gak jelas.
-        </p>
-
-        <p>
-            Makasih juga buat waktu kita nugas bareng, main bareng,
-            ngobrol sampai malam, dan semua hal kecil lainnya.
-        </p>
-
-        <p>
-            Wa mungkin orangnya memang suka notice hal-hal kecil.
-            Jadi banyak banget hal tentang kita yang wa masih ingat sampai sekarang.
-        </p>
-
-        <p>
-            Dulu kita bisa saling ngajak, saling cari waktu, dan saling nyempetin.
-            Hal-hal kecil kayak gitu yang bikin wa ngerasa kalau pertemanan kita berarti.
-        </p>
-
-        <p>
-            Dan walaupun sekarang banyak hal yang udah berubah,
-            wa gak mau semua yang pernah kita lewatin jadi gak berarti
-            cuma karena sekarang kita lagi ada di fase yang agak gak enak.
-        </p>
-
-        <p>
-            Wa tetap inget hal-hal baiknya.
-        </p>
-
-        <p>
-            Makasih karena pernah jadi orang yang bisa wa ajak cerita,
-            main, nugas, driving malam, atau bahkan cuma diem-dieman
-            sambil melakukan hal masing-masing.
-        </p>
-
-        <p>
-            Makasih buat semua kenangan yang udah kita buat.
-        </p>
-
-        <p>
-            Mungkin wa gak selalu bilang, tapi wa beneran menghargai semuanya.
-        </p>
-
-        <p>
-            Dan dari dulu sampai sekarang, wa tetap bersyukur pernah kenal
-            dan sedekat itu sama de.
-        </p>
-
-        <div class="quote">
-            Thank you, Fel. For everything. ♡
-        </div>
-
-    </div>
-
+<div class="small">
+05 · terima kasih
 </div>
+
+<h2>
+Terima Kasih, Fel
+</h2>
+
+<p>
+Oh iya, wa juga mau bilang makasih.
+</p>
+
+<p>
+Makasih buat semua hal yang udah de lakuin dari dulu sampai sekarang. Mungkin ada banyak hal yang menurut de biasa aja atau bahkan udah de lupa, tapi wa masih ingat.
+</p>
+
+<p>
+Makasih buat waktu-waktu yang pernah kita habiskan bareng. Buat malam-malam waktu de temanin wa driving, walaupun kadang kita gak ada yang mau dibahas tapi ujung-ujungnya tetap ada aja yang diomongin. Entah tanya-tanya random, teka-teki, atau ngobrol gak jelas.
+</p>
+
+<p>
+Makasih juga buat waktu kita nugas bareng, main bareng, ngobrol sampai malam, dan semua hal kecil lainnya.
+</p>
+
+<p>
+Wa mungkin orangnya memang suka notice hal-hal kecil. Jadi banyak banget hal tentang kita yang wa masih ingat sampai sekarang.
+</p>
+
+<p>
+Dulu kita bisa saling ngajak, saling cari waktu, dan saling nyempetin. Hal-hal kecil kayak gitu yang bikin wa ngerasa kalau pertemanan kita berarti.
+</p>
+
+<p>
+Dan walaupun sekarang banyak hal yang udah berubah, wa gak mau semua yang pernah kita lewatin jadi gak berarti cuma karena sekarang kita lagi ada di fase yang agak gak enak.
+</p>
+
+<p>
+Wa tetap inget hal-hal baiknya.
+</p>
+
+<p>
+Makasih karena pernah jadi orang yang bisa wa ajak cerita, main, nugas, driving malam, atau bahkan cuma diem-dieman sambil melakukan hal masing-masing.
+</p>
+
+<p>
+Makasih buat semua kenangan yang udah kita buat.
+</p>
+
+<p>
+Mungkin wa gak selalu bilang, tapi wa beneran menghargai semuanya.
+</p>
+
+<p>
+Dan dari dulu sampai sekarang, wa tetap bersyukur pernah kenal dan sedekat itu sama de.
+</p>
+
+<p>
+Thank you, Fel. For everything. ✨
+</p>
+
+</section>
 
 
 <!-- PAGE 6 -->
-<div class="page">
 
-    <div class="page-title">Terakhir, Fel</div>
+<section class="page">
 
-    <div class="content">
-
-        <p>
-            Terakhir, wa cuma mau bilang satu hal.
-        </p>
-
-        <p>
-            Wa gak tahu setelah de baca semuanya ini, de bakal ngerasa gimana.
-            Mungkin de kesel, mungkin de sedih, mungkin de bingung,
-            atau mungkin ada beberapa hal yang menurut de gak seperti yang
-            wa pikirin.
-        </p>
-
-        <p>
-            Dan wa gak berharap de langsung punya jawaban.
-        </p>
-
-        <p>
-            Wa cuma pengen kali ini wa jujur.
-        </p>
-
-        <p>
-            Karena selama ini terlalu banyak hal yang wa simpan sendiri,
-            terlalu banyak hal yang wa pikirin sendiri, dan terlalu banyak
-            hal yang akhirnya cuma jadi asumsi di kepala wa.
-        </p>
-
-        <p>
-            Mungkin cara wa menyampaikannya juga gak sempurna.
-            Mungkin ada kata-kata wa yang terlalu keras,
-            ada yang mungkin bikin de sakit hati.
-            Tapi semuanya wa tulis karena wa masih peduli.
-        </p>
-
-        <p>
-            Kalau wa udah gak peduli, wa rasa wa gak akan sejauh ini.
-        </p>
-
-        <p>
-            Wa juga gak tahu setelah ini kita bakal gimana.
-            Apakah semuanya bisa jadi lebih baik,
-            apakah kita butuh waktu,
-            atau mungkin hubungan kita memang akan berubah lagi.
-        </p>
-
-        <p>
-            Wa gak mau maksa de buat jadi seperti dulu.
-        </p>
-
-        <p>
-            Wa cuma berharap, kalau memang masih ada yang bisa dibicarakan,
-            kita bisa ngomongin itu baik-baik.
-        </p>
-
-        <p>
-            Dan kalau ternyata ada hal yang selama ini de rasain tentang wa,
-            wa juga mau denger.
-        </p>
-
-        <p>
-            Jadi kali ini, wa udah ngomong.
-        </p>
-
-        <div class="quote">
-            Sisanya wa serahin ke de.
-        </div>
-
-        <p>
-            Apa pun yang de rasain setelah baca ini,
-            wa harap de tahu kalau semua yang wa tulis bukan karena wa benci
-            atau gak menghargai de.
-        </p>
-
-        <p>
-            Justru sebaliknya.
-        </p>
-
-        <p>
-            Wa nulis semua ini karena de pernah,
-            dan sampai sekarang masih,
-            jadi orang yang penting buat wa.
-        </p>
-
-        <p class="handwritten">
-            So that’s all I wanted to say.
-        </p>
-
-        <p class="handwritten">
-            Thank you for staying this long, Fel.
-        </p>
-
-        <p class="handwritten">
-            And thank you for being a part of my life. ♡
-        </p>
-
-        <div class="divider">♡ ✦ ♡</div>
-
-        <p class="handwritten" style="text-align:center;">
-            — bontot
-        </p>
-
-        <div class="final-heart">
-            ♡
-        </div>
-
-    </div>
-
+<div class="small">
+06 · terakhir
 </div>
 
+<h2>
+Terakhir, Fel
+</h2>
 
-<!-- NAVIGATION -->
-<div class="navigation">
+<p>
+Terakhir, wa cuma mau bilang satu hal.
+</p>
 
-    <button id="backBtn" onclick="changePage(-1)">
-        ← back
-    </button>
+<p>
+Wa gak tahu setelah de baca semuanya ini, de bakal ngerasa gimana. Mungkin de kesel, mungkin de sedih, mungkin de bingung, atau mungkin ada beberapa hal yang menurut de gak seperti yang wa pikirin.
+</p>
 
-    <div class="page-number" id="pageNumber">
-        1 / 6
-    </div>
+<p>
+Dan wa gak berharap de langsung punya jawaban.
+</p>
 
-    <button id="nextBtn" onclick="changePage(1)">
-        next →
-    </button>
+<p>
+Wa cuma pengen kali ini wa jujur.
+</p>
 
+<p>
+Karena selama ini terlalu banyak hal yang wa simpan sendiri, terlalu banyak hal yang wa pikirin sendiri, dan terlalu banyak hal yang akhirnya cuma jadi asumsi di kepala wa.
+</p>
+
+<p>
+Mungkin cara wa menyampaikannya juga gak sempurna. Mungkin ada kata-kata wa yang terlalu keras, ada yang mungkin bikin de sakit hati. Tapi semuanya wa tulis karena wa masih peduli.
+</p>
+
+<p>
+Kalau wa udah gak peduli, wa rasa wa gak akan sejauh ini.
+</p>
+
+<p>
+Wa juga gak tahu setelah ini kita bakal gimana. Apakah semuanya bisa jadi lebih baik, apakah kita butuh waktu, atau mungkin hubungan kita memang akan berubah lagi.
+</p>
+
+<p>
+Wa gak mau maksa de buat jadi seperti dulu.
+</p>
+
+<p>
+Wa cuma berharap, kalau memang masih ada yang bisa dibicarakan, kita bisa ngomongin itu baik-baik.
+</p>
+
+<p>
+Dan kalau ternyata ada hal yang selama ini de rasain tentang wa, wa juga mau denger.
+</p>
+
+<p>
+Jadi kali ini, wa udah ngomong.
+</p>
+
+<p>
+Sisanya wa serahin ke de.
+</p>
+
+<p>
+Apa pun yang de rasain setelah baca ini, wa harap de tahu kalau semua yang wa tulis bukan karena wa benci atau gak menghargai de.
+</p>
+
+<p>
+Justru sebaliknya.
+</p>
+
+<p>
+Wa nulis semua ini karena de pernah, dan sampai sekarang masih, jadi orang yang penting buat wa.
+</p>
+
+<p>
+So that’s all I wanted to say.
+</p>
+
+<p>
+Thank you for staying this long, Fel.
+</p>
+
+<p>
+And thank you for being a part of my life. ✨
+</p>
+
+<p>
+— bontot
+</p>
+
+</section>
+
+
+<!-- PAGE 7 : PHOTOS -->
+
+<section class="page">
+
+<div class="small">
+07 · little memories
 </div>
 
+<h2>
+Some little memories ✨
+</h2>
 
+<p>
+Karena ternyata ada banyak hal kecil yang tetap wa simpan.
+</p>
+
+<div class="photo-grid">
+
+<div class="polaroid">
+<img src="foto1.jpg" alt="memory 1">
+<div class="caption">
+one of those random days that somehow became a memory ✨
 </div>
+</div>
+
+<div class="polaroid">
+<img src="foto2.jpg" alt="memory 2">
+<div class="caption">
+gak ngapa-ngapain, tapi tetap seru ✨
+</div>
+</div>
+
+<div class="polaroid">
+<img src="foto3.jpg" alt="memory 3">
+<div class="caption">
+we really took photos everywhere huh
+</div>
+</div>
+
+<div class="polaroid">
+<img src="foto4.jpg" alt="memory 4">
+<div class="caption">
+it’s show time 🎬
+</div>
+</div>
+
+<div class="polaroid">
+<img src="foto5.jpg" alt="memory 5">
+<div class="caption">
+and here’s you, being you. ✨
+</div>
+</div>
+
 </div>
 
 </section>
+
+
+<!-- PAGE 8 : HIDDEN MESSAGE -->
+
+<section class="page">
+
+<div class="small">
+08 · one last thing
+</div>
+
+<h2>
+One last thing ✨
+</h2>
+
+<p class="center">
+Kalau de udah sampai sini, berarti de beneran baca semuanya.
+</p>
+
+<div class="center" style="margin-top:25px">
+
+<button onclick="reveal()">
+I finished reading ✨
+</button>
+
+</div>
+
+<div id="hidden" class="hidden-box">
+
+<div class="quote">
+
+Actually... there’s one more thing.
+<br><br>
+
+Kalau de sampai di bagian ini, berarti de beneran baca semuanya.
+<br>
+
+Makasih ya, Fel.
+<br><br>
+
+Apa pun jawaban de nanti, wa cuma senang akhirnya bisa jujur.
+<br>
+
+Wa gak tahu apa setelah ini semuanya bakal kembali seperti dulu atau enggak.
+<br>
+
+Tapi setidaknya sekarang de tahu apa yang selama ini ada di kepala wa.
+<br><br>
+
+And honestly... that’s already enough for me. ✨
+<br><br>
+
+take care, Fel.
+<br>
+
+— bontot ✨
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="nav">
+
+<button
+class="back"
+onclick="changePage(-1)">
+← back
+</button>
+
+<button
+onclick="changePage(1)">
+next →
+</button>
+
+</div>
+
+<div id="progress" class="progress">
+1 / 8
+</div>
+
+<div class="footer">
+made with a little bit of courage ✨
+</div>
+
+</div>
+</div>
+
+</main>
+
+
+<!-- MUSIC -->
+
+<div
+id="musicBox"
+class="music"
+style="display:none"
+>
+
+<button
+onclick="toggleMusic()"
+id="musicBtn">
+▶
+</button>
+
+Sad Song
+
+</div>
+
+
+<audio
+id="audio"
+src="sad-song.mp3"
+loop>
+</audio>
 
 
 <script>
 
-const correctPassword = "110706";
+let current = 0;
 
-let currentPage = 0;
+const pages =
+document.querySelectorAll(".page");
 
-const pages = document.querySelectorAll(".page");
+const progress =
+document.getElementById("progress");
+
+const audio =
+document.getElementById("audio");
+
+const musicBox =
+document.getElementById("musicBox");
+
+const musicBtn =
+document.getElementById("musicBtn");
+
+
+/* PAGE NAVIGATION */
+
+function showPage(n) {
+
+  current =
+  Math.max(
+    0,
+    Math.min(
+      pages.length - 1,
+      n
+    )
+  );
+
+  pages.forEach(
+    (page, index) => {
+
+      page.classList.toggle(
+        "active",
+        index === current
+      );
+
+    }
+  );
+
+  progress.textContent =
+  (current + 1) +
+  " / " +
+  pages.length;
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+function changePage(step) {
+
+  showPage(
+    current + step
+  );
+
+}
+
+
+/* PASSWORD */
 
 function checkPassword() {
 
-    const input = document.getElementById("passwordInput").value;
-    const error = document.getElementById("errorMessage");
+  const value =
+  document.getElementById(
+    "password"
+  ).value;
 
-    if (input === correctPassword) {
+  const error =
+  document.getElementById(
+    "error"
+  );
 
-        document.getElementById("passwordPage").style.display = "none";
-        document.getElementById("website").style.display = "block";
+  if (value === "110706") {
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+    document.getElementById(
+      "passwordScreen"
+    ).style.display = "none";
 
-    } else {
+    document.getElementById(
+      "site"
+    ).style.display = "block";
 
-        error.textContent =
-            "hmm... that's not it 🤭 try again ♡";
+    musicBox.style.display =
+    "block";
 
-    }
+    showPage(0);
+
+    audio.play()
+      .then(() => {
+
+        musicBtn.textContent =
+        "❚❚";
+
+      })
+      .catch(() => {});
+
+  }
+
+  else {
+
+    error.textContent =
+    "hmm... that's not it 🤭 try again ✨";
+
+  }
+
 }
 
 
-function changePage(direction) {
+/* ENTER PASSWORD */
 
-    const nextPage = currentPage + direction;
+document
+.getElementById("password")
+.addEventListener(
+  "keydown",
+  function(e) {
 
-    if (nextPage < 0 || nextPage >= pages.length) {
-        return;
+    if (e.key === "Enter") {
+
+      checkPassword();
+
     }
 
-    pages[currentPage].classList.remove("active");
+  }
+);
 
-    currentPage = nextPage;
 
-    pages[currentPage].classList.add("active");
+/* MUSIC */
 
-    document.getElementById("pageNumber").textContent =
-        (currentPage + 1) + " / " + pages.length;
+function toggleMusic() {
 
-    document.getElementById("backBtn").style.visibility =
-        currentPage === 0 ? "hidden" : "visible";
+  if (audio.paused) {
 
-    if (currentPage === pages.length - 1) {
-        document.getElementById("nextBtn").style.display = "none";
-    } else {
-        document.getElementById("nextBtn").style.display = "block";
-    }
+    audio.play();
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    musicBtn.textContent =
+    "❚❚";
+
+  }
+
+  else {
+
+    audio.pause();
+
+    musicBtn.textContent =
+    "▶";
+
+  }
+
 }
 
 
-/* Enter juga bisa digunakan untuk password */
-document.getElementById("passwordInput").addEventListener("keypress", function(event) {
+/* HIDDEN MESSAGE */
 
-    if (event.key === "Enter") {
-        checkPassword();
-    }
+function reveal() {
 
-});
+  document
+  .getElementById("hidden")
+  .classList.add("show");
 
-
-/* tombol back disembunyikan di awal */
-document.getElementById("backBtn").style.visibility = "hidden";
+}
 
 </script>
 
