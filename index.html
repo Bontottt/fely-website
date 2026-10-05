@@ -7,122 +7,335 @@
     <title>For Fely ♡</title>
 
     <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f8eee5;
-            font-family: Georgia, serif;
-            color: #5b4a42;
-        }
-
-        .card {
-            width: 85%;
-            max-width: 400px;
-            padding: 40px 25px;
-            text-align: center;
-            background: #fffaf5;
-            border: 2px solid #dbc8b8;
-            border-radius: 20px;
-            box-shadow: 5px 7px 0 #d8c4b5;
-        }
-
-        .heart {
-            font-size: 50px;
-        }
-
-        h1 {
-            font-size: 38px;
-            margin: 10px 0;
-        }
-
-        p {
-            line-height: 1.7;
-        }
-
-        input {
-            width: 80%;
-            padding: 12px;
-            margin: 15px 0;
-            border: 1px solid #cbb8aa;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 16px;
+        * {
             box-sizing: border-box;
         }
 
-        button {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 20px;
-            background: #d99a9a;
-            color: white;
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,.7) 0 2px, transparent 3px),
+                #f3e5d8;
+            background-size: 35px 35px;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #59483f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 15px;
+            overflow-x: hidden;
+        }
+
+        /* dekorasi */
+        .doodle {
+            position: fixed;
+            font-size: 28px;
+            z-index: 1;
+            opacity: .8;
+        }
+
+        .doodle.one {
+            top: 7%;
+            left: 7%;
+            transform: rotate(-15deg);
+        }
+
+        .doodle.two {
+            top: 12%;
+            right: 8%;
+            transform: rotate(15deg);
+        }
+
+        .doodle.three {
+            bottom: 8%;
+            left: 8%;
+            transform: rotate(10deg);
+        }
+
+        .doodle.four {
+            bottom: 12%;
+            right: 8%;
+            transform: rotate(-12deg);
+        }
+
+        /* kertas scrapbook */
+        .paper {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            min-height: 650px;
+            background: #fffaf3;
+            padding: 45px 28px 35px;
+            box-shadow:
+                0 12px 25px rgba(82, 57, 45, .15),
+                7px 7px 0 #dfcbbd;
+            transform: rotate(-1deg);
+            border: 1px solid #ead8ca;
+        }
+
+        /* garis kertas */
+        .paper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(
+                    to bottom,
+                    transparent 0px,
+                    transparent 31px,
+                    rgba(202, 170, 150, .18) 32px
+                );
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* tape */
+        .tape {
+            position: absolute;
+            width: 95px;
+            height: 28px;
+            background: rgba(229, 190, 180, .65);
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            z-index: 5;
+        }
+
+        .small-note {
+            display: inline-block;
+            background: #f7d9d2;
+            padding: 7px 13px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transform: rotate(-4deg);
+            margin-bottom: 22px;
+            box-shadow: 2px 3px 0 rgba(100,70,60,.12);
+        }
+
+        .heart {
+            font-size: 58px;
+            animation: floating 2.5s ease-in-out infinite;
+            margin-bottom: 8px;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0) rotate(-4deg);
+            }
+            50% {
+                transform: translateY(-7px) rotate(4deg);
+            }
+        }
+
+        h1 {
+            font-size: 42px;
+            margin: 0;
+            color: #6b5148;
+            font-weight: normal;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 14px 0 25px;
+        }
+
+        /* polaroid */
+        .polaroid {
+            width: 155px;
+            background: white;
+            padding: 9px 9px 17px;
+            box-shadow: 3px 5px 10px rgba(80,60,50,.15);
+            transform: rotate(4deg);
+            margin: 0 auto 30px;
+        }
+
+        .photo-placeholder {
+            height: 115px;
+            background: #eadbd0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 38px;
+        }
+
+        .polaroid-text {
+            font-size: 11px;
+            margin-top: 9px;
+            color: #766157;
+        }
+
+        /* password */
+        .question {
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1.5px dashed #c9a99a;
+            border-radius: 4px;
+            background: #fffdf9;
+            color: #5b4a42;
+            font-family: Georgia, serif;
             font-size: 16px;
+            text-align: center;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #b8897c;
+        }
+
+        button {
+            margin-top: 13px;
+            padding: 13px 28px;
+            border: none;
+            border-radius: 3px;
+            background: #d99d98;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            box-shadow: 3px 4px 0 #c48680;
             cursor: pointer;
+            transition: .2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px) rotate(-1deg);
+        }
+
+        button:active {
+            transform: translateY(2px);
+            box-shadow: 1px 2px 0 #c48680;
         }
 
         #message {
-            margin-top: 15px;
-            color: #b65f6b;
+            min-height: 25px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #ad6767;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #9a8277;
+            transform: rotate(1deg);
         }
     </style>
 </head>
 
 <body>
 
-    <div class="card">
+    <!-- dekorasi -->
+    <div class="doodle one">♡</div>
+    <div class="doodle two">✦</div>
+    <div class="doodle three">☁</div>
+    <div class="doodle four">♡</div>
 
-        <div class="heart">💌</div>
+    <main class="paper">
 
-        <h1>Hi, Fely ♡</h1>
+        <div class="tape"></div>
 
-        <p>
-            Ada sesuatu kecil yang<br>
-            mau aku kasih ke kamu...
-        </p>
+        <div class="content">
 
-        <p>
-            Tapi kamu harus tahu<br>
-            passwordnya dulu 🤫
-        </p>
+            <div class="small-note">
+                a little something for you
+            </div>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="password..."
-        >
+            <div class="heart">
+                💌
+            </div>
 
-        <br>
+            <h1>Hi, Fely ♡</h1>
 
-        <button onclick="checkPassword()">
-            Open ♡
-        </button>
+            <p class="subtitle">
+                I made this little corner<br>
+                especially for you.
+                <br><br>
+                But before you come in...
+                <br>
+                there's one tiny thing you need to know 🤫
+            </p>
 
-        <div id="message"></div>
+            <!-- polaroid sementara -->
+            <div class="polaroid">
 
-    </div>
+                <div class="photo-placeholder">
+                    📷
+                </div>
+
+                <div class="polaroid-text">
+                    memories loading...
+                </div>
+
+            </div>
+
+            <div class="question">
+                ✎ what's the password?
+            </div>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="type it here..."
+                onkeydown="if(event.key === 'Enter') checkPassword()"
+            >
+
+            <br>
+
+            <button onclick="checkPassword()">
+                open my little secret ♡
+            </button>
+
+            <div id="message"></div>
+
+            <div class="footer">
+                made with a little bit of courage ♡
+            </div>
+
+        </div>
+
+    </main>
 
     <script>
+
         function checkPassword() {
 
             const password =
-                document.getElementById("password").value;
+                document.getElementById("password").value.trim();
+
+            const message =
+                document.getElementById("message");
 
             if (password === "fely") {
 
-                document.getElementById("message").innerHTML =
-                    "♡ Password benar! Sebentar...";
+                message.innerHTML =
+                    "♡ you got it! something is waiting for you...";
+
+                setTimeout(function() {
+
+                    alert("Welcome, Fely ♡");
+
+                }, 800);
 
             } else {
 
-                document.getElementById("message").innerHTML =
-                    "Hehe, passwordnya salah 🤭";
+                message.innerHTML =
+                    "hmm... that's not it 🤭 try again ♡";
 
             }
         }
+
     </script>
 
 </body>
-        </html>
+</html>
